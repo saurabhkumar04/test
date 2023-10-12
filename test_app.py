@@ -41,6 +41,7 @@ def ask_question(question, reference_file):
     
 
 app = dash.Dash()
+server = app.server
 
 text_prompt = dcc.Input(id='text-prompt', type='text', placeholder='Enter a question.')
 submit_button = html.Button('Submit', id='submit-button')
