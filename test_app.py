@@ -16,7 +16,7 @@ It can handle multiple languages and can be trained on a company’s specific la
 
 
 # Set your OpenAI API key
-openai.api_key = "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"
+openai.api_key = "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"
 
 def ask_question(question, reference_file):
     #with open(reference_file, "r",encoding='utf-8') as file:
@@ -48,9 +48,21 @@ submit_button = html.Button('Submit', id='submit-button')
 output_area = html.Div(id='output-area')
 
 app.layout = html.Div([
-    text_prompt,
+    text_prompt, 
+    html.Br(),
+    html.Br(),
     submit_button,
-    output_area
+    html.Br(),
+    html.Br(),
+    #output_area
+    
+    dcc.Loading(
+        id="load-genai",
+        type="default",
+        children=
+
+            html.Div(id="load-output-genai",children = [html.Div(id="output-area",className="row",style={'whiteSpace': 'pre-line'})], className="pretty_container"),                  
+        ),
 ])
 
 @app.callback(
