@@ -15,8 +15,7 @@ The chatbot can be deployed on company websites, mobile apps, messaging platform
 It can handle multiple languages and can be trained on a company’s specific language and terminology. This feature is super helpful who had the multiple languages related customers."""
 
 
-# Set your OpenAI API key
-openai.api_key = "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"
+
 
 def ask_question(question, reference_file):
     #with open(reference_file, "r",encoding='utf-8') as file:
