@@ -4,6 +4,8 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output, State
+import os
+from decouple import config
 
 
 reference_text = """ Chat bot will create collect the data and create the case and assign to corresponding queue.
@@ -42,11 +44,13 @@ def ask_question(question, reference_file):
 app = dash.Dash()
 server = app.server
 
+
 text_prompt = dcc.Input(id='text-prompt', type='text', placeholder='Enter a question.')
 submit_button = html.Button('Submit', id='submit-button')
 output_area = html.Div(id='output-area')
 
 app.layout = html.Div([
+    html.H3(config('OPENAI_API_KEY2')))
     text_prompt, 
     html.Br(),
     html.Br(),
@@ -79,4 +83,5 @@ def update_output(n_clicks, text_prompt_value):
         return ''
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    print (config('OPENAI_API_KEY2'))
+    #app.run_server(debug=True)
