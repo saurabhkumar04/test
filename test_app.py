@@ -17,7 +17,7 @@ The chatbot can be deployed on company websites, mobile apps, messaging platform
 It can handle multiple languages and can be trained on a company’s specific language and terminology. This feature is super helpful who had the multiple languages related customers."""
 
 
-
+api_key = os.environ.get('OPENAI_API_KEY2')
 
 def ask_question(question, reference_file):
     #with open(reference_file, "r",encoding='utf-8') as file:
@@ -30,6 +30,7 @@ def ask_question(question, reference_file):
         prompt=prompt,
         temperature=0.5,
         max_tokens=100,
+        api_key = api_key,
         n=1,
         stop=None,
         
@@ -45,15 +46,15 @@ app = dash.Dash()
 server = app.server
 
 
-api_key = os.environ.get('OPENAI_API_KEY2')
-print ("the api keys are                                            :   ",api_key)
-print ("--------------------------------------------------------------------------")
+
+#print ("the api keys are                                            :   ",api_key)
+#print ("--------------------------------------------------------------------------")
 text_prompt = dcc.Input(id='text-prompt', type='text', placeholder='Enter a question.')
 submit_button = html.Button('Submit', id='submit-button')
 output_area = html.Div(id='output-area')
 
 app.layout = html.Div([
-    html.H3(api_key),
+    html.H3("Enter Prompt"),
     text_prompt, 
     html.Br(),
     html.Br(),
