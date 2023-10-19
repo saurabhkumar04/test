@@ -2,4 +2,4 @@ dash==2.8.0
 pandas
 openai
 gunicorn
-decouple
+python-decouple
