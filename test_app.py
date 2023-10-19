@@ -54,7 +54,7 @@ submit_button = html.Button('Submit', id='submit-button')
 output_area = html.Div(id='output-area')
 
 app.layout = html.Div([
-    html.H3("Enter Prompt"),
+    #html.H3("Enter Prompt"),
     text_prompt, 
     html.Br(),
     html.Br(),
