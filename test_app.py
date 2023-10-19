@@ -45,7 +45,7 @@ app = dash.Dash()
 server = app.server
 
 
-api_key = os.getenv('OPENAI_API_KEY2')
+api_key = os.environ.get('OPENAI_API_KEY2')
 print ("the api keys are                                            :   ",api_key)
 print ("--------------------------------------------------------------------------")
 text_prompt = dcc.Input(id='text-prompt', type='text', placeholder='Enter a question.')
