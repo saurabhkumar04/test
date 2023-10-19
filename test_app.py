@@ -46,6 +46,7 @@ server = app.server
 
 
 api_key = os.getenv('OPENAI_API_KEY2')
+print (api_key)
 text_prompt = dcc.Input(id='text-prompt', type='text', placeholder='Enter a question.')
 submit_button = html.Button('Submit', id='submit-button')
 output_area = html.Div(id='output-area')
