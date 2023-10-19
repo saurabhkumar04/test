@@ -45,12 +45,13 @@ app = dash.Dash()
 server = app.server
 
 
+api_key = os.getenv('OPENAI_API_KEY2')
 text_prompt = dcc.Input(id='text-prompt', type='text', placeholder='Enter a question.')
 submit_button = html.Button('Submit', id='submit-button')
 output_area = html.Div(id='output-area')
 
 app.layout = html.Div([
-    html.H3(config('OPENAI_API_KEY2')),
+    html.H3(api_key),
     text_prompt, 
     html.Br(),
     html.Br(),
