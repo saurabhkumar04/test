@@ -8,13 +8,7 @@ import os
 from decouple import config
 
 
-reference_text = """ Chat bot will create collect the data and create the case and assign to corresponding queue.
-
-It integrates with other Salesforce products and can be customized to meet the specific needs of a business. customer has question and chat bot will look into company knowledge base docs and reply back with answer.
-
-The chatbot can be deployed on company websites, mobile apps, messaging platforms, and other customer touchpoints. This bot interacts with salesforce service and sales cloud.
-
-It can handle multiple languages and can be trained on a company’s specific language and terminology. This feature is super helpful who had the multiple languages related customers."""
+reference_text = """ CDP  The Automated AlgorithmNext generation data solutions are required to stay ahead in the marketplaceIntroductionModern customer engagement requires a different approach to succeedThe customer experience has shifted significantly over the past decade due to disruptive shifts in buying patterns technology innovation and a dynamic global marketplace that is ever more interconnected Today’s customers have in many cases what seem to be infinite choices among highly personalized experiences throughout their customer journey This happens at every touch point and across multiple channels Those who create sell and distribute products have had to significantly evolve their business models to staycompetitive and increasingly invest in tools and processes to stay in touch and relevant with customersMassive amounts of customer data is being generated and collected across multiple sources from websites digital channels and campaigns to mobile applications Also the very product itself that consumers areusing is generating data Retailers who sell manufacturers who build and organizations that market products and services have more potential insights than ever The problem is not in accessing the data it’s in creating an operational model based on data to make effective decisions at scaleResponding to a customer insight at scale is very difficult to do when the view is fragmented across multiple channels products touch points and regions In some scenarios it’s possible to develop a true customer insight orunderstanding but it comes long after it’s relevant  often at the point of trying to understand why a customer was lostFurthermore developing a personalized customer experience at scale is very difficult when other factors such as old data disconnected systems and processes and integration complexities are factored into the mixThese operational disconnects can lead to an unhappy customer disconnected experience and deliver a below market expectation resulting in higher churn sup"""
 
 
 api_key = os.environ.get('OPENAI_API_KEY2')
@@ -29,14 +23,14 @@ def ask_question(question, reference_file):
         engine="text-davinci-003",
         prompt=prompt,
         temperature=0.5,
-        max_tokens=100,
+        max_tokens=2500,
         api_key = api_key,
         n=1,
         stop=None,
         
     )
 
-    answer = response.choices[0].text.strip().split("\n")[0]
+    answer = response.choices[0].text.strip().split("\n")
 
     return answer
     
