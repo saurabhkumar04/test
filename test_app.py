@@ -64,7 +64,7 @@ app.layout = html.Div([
 
             html.Div(id="load-output-genai",children = [html.Div(id="output-area",className="row",style={'whiteSpace': 'pre-line'})], className="pretty_container"),                  
         ),
-])
+], style={'font-size': '18px'})
 
 @app.callback(
     Output('output-area', 'children'),
