@@ -30,7 +30,7 @@ def ask_question(question, reference_file):
         
     )
 
-    answer = response.choices[0].text.strip().split("\n")
+    answer = response.choices[0].text.strip().split("\n") + "\n" + response.choices[1].text.strip().split("\n")
 
     return answer
     
