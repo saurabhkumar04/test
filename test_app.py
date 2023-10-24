@@ -33,7 +33,11 @@ def ask_question(question, reference_file):
     #answer = response.choices[0].text.strip().split("\n") + "\n" + response.choices[1].text.strip().split("\n")
     answer = response.choices[0].text.strip().split("\n")
     answer.append("\n")
-    answer.append(response.choices[1].text.strip().split("\n"))
+    #answer.append(response.choices[1].text.strip().split("\n"))
+    if len(response.choices) > 1:
+        answer.append(response.choices[1].text.strip().split("\n"))
+    else:
+        continue
     
     return answer
     
@@ -46,7 +50,7 @@ server = app.server
 
 #print ("the api keys are                                            :   ",api_key)
 #print ("--------------------------------------------------------------------------")
-text_prompt = dcc.Input(id='text-prompt', type='text', placeholder='Enter a question.', style={'width':'100px'})
+text_prompt = dcc.Input(id='text-prompt', type='text', placeholder='Enter a question.', style={'width':'300px'})
 submit_button = html.Button('Submit', id='submit-button')
 output_area = html.Div(id='output-area', style={'font-family': 'Arial'})
 
