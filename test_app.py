@@ -23,7 +23,7 @@ def ask_question(question, reference_file):
         engine="text-davinci-003",
         prompt=prompt,
         temperature=0.5,
-        max_tokens=2500,
+        max_tokens=3000,
         api_key = api_key,
         n=1,
         stop=None,
