@@ -37,7 +37,7 @@ def ask_question(question, reference_file):
     if len(response.choices) > 1:
         answer.append(response.choices[1].text.strip().split("\n"))
     else:
-        continue
+        answer.append("\n")
     
     return answer
     
