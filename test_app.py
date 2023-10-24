@@ -48,7 +48,7 @@ server = app.server
 #print ("--------------------------------------------------------------------------")
 text_prompt = dcc.Input(id='text-prompt', type='text', placeholder='Enter a question.', style={'width':'100px'})
 submit_button = html.Button('Submit', id='submit-button')
-output_area = html.Div(id='output-area')
+output_area = html.Div(id='output-area', style={'font-family': 'Arial'})
 
 app.layout = html.Div([
     #html.H3("Enter Prompt"),
@@ -65,9 +65,9 @@ app.layout = html.Div([
         type="default",
         children=
 
-            html.Div(id="load-output-genai",children = [html.Div(id="output-area",className="row",style={'whiteSpace': 'pre-line'})], className="pretty_container"),                  
+            html.Div(id="load-output-genai",children = [html.Div(id="output-area",className="row",style={'whiteSpace': 'pre-line','font-family': 'Arial'})], className="pretty_container"),                  
         ),
-], style={'font-size': '18px',‘font-family’:‘Arial’})
+], style={'font-size': '18px'})
 
 @app.callback(
     Output('output-area', 'children'),
